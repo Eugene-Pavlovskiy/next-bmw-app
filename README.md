@@ -124,6 +124,23 @@ file.
 ```
 ## React Icons
 `yarn add react-icons`
+
+# Deploy app to Github Pages with CICD
+```bash
+git init
+git add .
+git commit -m "FirstDeploy"
+git branch -M main
+git remote add origin https://github.com/Eugene-Pavlovskiy/next-bmw-app.git
+git push -u origin main
+```
+
+## For production Image Optimization with Next.js, the optional 'sharp' package is strongly recommended. Run 'yarn add sharp'
+`yarn add sharp`
+
+## Deploy
+`yarn run build`
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the
