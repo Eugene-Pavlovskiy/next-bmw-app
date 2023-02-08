@@ -5,6 +5,7 @@ import Hero from '@/components/Hero';
 import Slider from '@/components/Slider';
 import { SliderData } from '@/components/SliderData';
 import Instagram from '@/components/Instagram';
+import Tabs from '@/components/Tabs';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,6 +22,7 @@ export default function Home() {
         <Hero heading="BMW" message="A racing experience for every day." />
         <Slider slides={SliderData} />
         <Instagram />
+        <Tabs />
       </main>
     </>
   );

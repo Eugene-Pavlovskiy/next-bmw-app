@@ -122,10 +122,56 @@ file.
 @tailwind components;
 @tailwind utilities;
 ```
+
 ## React Icons
+
 `yarn add react-icons`
 
+## Add HeadlessUI and Use the `@headlessui/tailwindcss` plugin
+
+`https://headlessui.com/react/tabs`
+
+```bash
+yarn add @headlessui/react
+yarn add @headlessui/tailwindcss
+yarn add className
+yarn add classnames
+```
+
+```bash
+import { Tab } from '@headlessui/react'
+
+function MyTabs() {
+  return (
+    <Tab.Group>
+      <Tab.List>
+        <Tab>Tab 1</Tab>
+        <Tab>Tab 2</Tab>
+        <Tab>Tab 3</Tab>
+      </Tab.List>
+      <Tab.Panels>
+        <Tab.Panel>Content 1</Tab.Panel>
+        <Tab.Panel>Content 2</Tab.Panel>
+        <Tab.Panel>Content 3</Tab.Panel>
+      </Tab.Panels>
+    </Tab.Group>
+  )
+}
+```
+
+## Vertical Tabs
+
+```bash
+<Tab.Group vertical>
+      <Tab.List className="flex-col"></Tab.List>
+</Tab.Group>
+```
+
+## Swiper
+`yarn add swiper`
+
 # Deploy app to Github Pages with CICD
+
 ```bash
 git init
 git add .
@@ -136,9 +182,11 @@ git push -u origin main
 ```
 
 ## For production Image Optimization with Next.js, the optional 'sharp' package is strongly recommended. Run 'yarn add sharp'
+
 `yarn add sharp`
 
 ## Deploy
+
 `yarn run build`
 
 ## Deploy on Vercel
