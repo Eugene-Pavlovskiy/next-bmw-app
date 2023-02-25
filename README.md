@@ -168,32 +168,52 @@ function MyTabs() {
 ```
 
 ## Swiper
+
 `yarn add swiper`
 
-
 ## Install Mongoose
+
 `yarn add mongoose`
 
 ## Install Scrollbar
+
 `yarn add tailwind-scrollbar-hide`
 
 ## Add to file `tailwind.config.js`
+
 ```bash
 plugins: [
     require('tailwind-scrollbar-hide')
   ],
 ```
+
 ## Install `use-local-storage-state`
+
 `yarn add use-local-storage-state`
 
 ## Install Stripe
-`yarn add stripe`
-`https://stripe.com/docs/checkout/quickstart`
 
+`yarn add stripe` `https://stripe.com/docs/checkout/quickstart`
 
 ## For production Image Optimization with Next.js, the optional 'sharp' package is strongly recommended. Run `yarn add sharp`
 
 `yarn add sharp`
+
+## Stripe Install CLI
+`https://stripe.com/docs/stripe-cli`
+`https://github.com/stripe/stripe-cli/wiki/installation`
+```bash
+brew install stripe/stripe-cli/stripe
+
+```
+`stripe listen --forward-to localhost:3000/api/webhook`
+
+## Install micro
+`yarn add micro`
+
+## Deploy
+
+`yarn run build`
 
 # Deploy app to Github Pages with CICD
 
@@ -206,9 +226,6 @@ git remote add origin https://github.com/Eugene-Pavlovskiy/next-bmw-app.git
 git push -u origin main
 ```
 
-## Deploy
-
-`yarn run build`
 
 ## Deploy on Vercel
 
