@@ -1,0 +1,26 @@
+{
+  "M-Models": [
+    {
+      "id": 1,
+      "title": "M-Models",
+      "content": "Numerous innovative technologies in the new BMW 3 Series Sedan allow the driver and vehicle to communicate with each other conveniently: The BMW Curved Display offers a full overview of all important information and convenient operation by touch Unlimited connectivity through smartphone integration, for example to plan routes conveniently on your smartphone and then transfer them to your vehicle Experience intuitive operation through voice control.",
+      "path": "https://cdn.pixabay.com/photo/2022/01/26/18/53/car-6969645_960_720.png"
+    }
+  ],
+  "X-Models": [
+    {
+      "id": 2,
+      "title": "X-Models",
+      "content": "In the new BMW X6, maximum sporty driving dynamics meet athletic design and luxurious equipment: Powerful BMW M TwinPower Turbo 8-cylinder internal combustion engine with 390 kW (530 hp). Maximum driving comfort thanks to optional xOffroad package and 8-speed Steptronic Sport transmission Powerful presence thanks to illuminated BMW &#34;Iconic Glow&#34; kidney (optional) and standard M sports package Modern technologies and high-quality materials such as &#34;CraftedClarity&#34; glass applications (optional).",
+      "path": "https://cdn.pixabay.com/photo/2022/10/27/17/23/car-7551332_960_720.png"
+    }
+  ],
+  "I-Models": [
+    {
+      "id": 3,
+      "title": "I-Models",
+      "content": "The seventh generation of the BMW 7 Series - the BMW i7 - is the first to be equipped with an all-electric drive, but the 7 Series is also redefining the class with regard to driving assistance, connectivity, entertainment and also lighting and spatial concepts.",
+      "path": "https://cdn.pixabay.com/photo/2022/10/27/17/31/car-7551355_960_720.png"
+    }
+  ]
+}

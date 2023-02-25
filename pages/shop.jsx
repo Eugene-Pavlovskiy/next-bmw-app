@@ -1,110 +1,55 @@
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import SwiperCore, { Autoplay } from 'swiper';
-import Image from 'next/image';
-import Link from 'next/link';
+import Product from '../components/Product';
 import HeroSm from '@/components/HeroSm';
-// import { shopData } from '@/components/ShopData';
+import { useEffect, useState } from 'react';
+import {initMongoose} from "../lib/mongoose";
+import {findAllProducts} from "./api/products";
+import Layout from '@/components/Layout';
 
-export default function Shop() {
-  SwiperCore.use([Autoplay]);
+export default function Shop({products}) {
+  const [phrase,setPhrase] = useState('');
+
+  const categoriesNames = [...new Set(products.map(p => p.category))];
+
+  if (phrase) {
+    products = products.filter(p => p.name.toLowerCase().includes(phrase));
+  }
   return (
-    <>
-      <div className="bg-gradient-to-b from-black/30 to-white/80">
+    <Layout>
+      <div className="bg-gradient-to-b from-black/30 to-white/80 pt-10">
         <HeroSm />
       </div>
+      <input value={phrase} onChange={e => setPhrase(e.target.value)} type="text" placeholder="Search for products..." className="bg-gray-200 w-full py-2 px-4 rounded-xl"/>
       <div>
-        <div class="cursor-pointer  mt-5 mx-auto px-5 md:px-10">
-          <Swiper
-            spaceBetween={10}
-            slidesPerView="auto"
-            speed={5000}
-            autoplay={{
-              delay: 1,
-              disableOnInteraction: false,
-            }}
-            grabCursor={true}
-            centeredSlides={true}
-            loop={true}
-          >
-            <SwiperSlide>
-              <Link href={'/'}>
-                <Image
-                  src={'/assets/bmw1.png'}
-                  alt="/"
-                  width={800}
-                  height={400}
-                />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link href={'/'}>
-                <Image
-                  src={'/assets/bmw2.png'}
-                  alt="/"
-                  width={800}
-                  height={400}
-                />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link href={'/'}>
-                <Image
-                  src={'/assets/bmw3.png'}
-                  alt="/"
-                  width={800}
-                  height={400}
-                />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link href={'/'}>
-                <Image
-                  src={'/assets/bmw4.png'}
-                  alt="/"
-                  width={800}
-                  height={400}
-                />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link href={'/'}>
-                <Image
-                  src={'/assets/bmw5.png'}
-                  alt="/"
-                  width={800}
-                  height={400}
-                />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link href={'/'}>
-                <Image
-                  src={'/assets/bmw6.png'}
-                  alt="/"
-                  width={800}
-                  height={400}
-                />
-              </Link>
-            </SwiperSlide>
-          </Swiper>
-        </div>
+        {categoriesNames.map(categoryName => (
+          <div key={categoryName}>
+            {products.find(p => p.category === categoryName) && (
+              <div>
+                <h2 className="text-2xl py-5 capitalize">{categoryName}</h2>
+                <div className="flex -mx-5 overflow-x-scroll snap-x scrollbar-hide">
+                  {products
+                    .filter(p => p.category === categoryName)
+                    .map(productInfo => (
+                      <div key={productInfo._id} className="px-5 snap-start">
+                        <Product {...productInfo} />
+                      </div>
+                    ))}
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
-    </>
+    </Layout>
   );
 }
 
-// function Slide() {
-//   return (
-//     <div className="grid md:grid-cols-2">
-//       <div className="p-0">
-//         <Link href={'/'}>
-//           <Image src={'/assets/bmw1.png'} alt="/" width={600} height={600} />
-//         </Link>
-//       </div>
-//     </div>
-//   );
-// }
+export async function getServerSideProps() {
+  await initMongoose();
+  const products = await findAllProducts();
+  return {
+    props: {
+      products: JSON.parse(JSON.stringify(products)),
+    },
+  };
+}

@@ -1,11 +1,11 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import { Inter } from '@next/font/google';
 import Hero from '@/components/Hero';
 import Slider from '@/components/Slider';
 import { SliderData } from '@/components/SliderData';
 import Instagram from '@/components/Instagram';
 import Tabs from '@/components/Tabs';
+import SwiperCar from '@/components/SwiperCar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,6 +23,7 @@ export default function Home() {
         <Slider slides={SliderData} />
         <Instagram />
         <Tabs />
+        <SwiperCar />
       </main>
     </>
   );
