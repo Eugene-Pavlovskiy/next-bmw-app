@@ -226,7 +226,6 @@ git remote add origin https://github.com/Eugene-Pavlovskiy/next-bmw-app.git
 git push -u origin main
 ```
 
-
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the
