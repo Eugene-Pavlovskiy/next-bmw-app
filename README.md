@@ -211,6 +211,10 @@ brew install stripe/stripe-cli/stripe
 ## Install micro
 `yarn add micro`
 
+## Install XHR2
+`yarn add xhr2`
+`yarn add xmlhttprequest --save`
+
 ## Deploy
 
 `yarn run build`
