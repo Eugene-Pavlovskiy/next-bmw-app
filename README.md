@@ -215,6 +215,11 @@ brew install stripe/stripe-cli/stripe
 `yarn add xhr2`
 `yarn add xmlhttprequest --save`
 
+## Search form `https://flowbite.com/docs/forms/search-input/`
+
+## Voice Search `yarn add react-speech-recognation`
+
+
 ## Deploy
 
 `yarn run build`

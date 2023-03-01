@@ -1,13 +1,13 @@
 import React from 'react';
 import Product from '../components/Product';
 import HeroSm from '@/components/HeroSm';
-import { useEffect, useState } from 'react';
-import {initMongoose} from "../lib/mongoose";
-import {findAllProducts} from "./api/products";
+import { useState } from 'react';
+import { initMongoose } from '../lib/mongoose';
+import { findAllProducts } from './api/products';
 import Layout from '@/components/Layout';
 
-export default function Shop({products}) {
-  const [phrase,setPhrase] = useState('');
+export default function Shop({ products }) {
+  const [phrase, setPhrase] = useState('');
 
   const categoriesNames = [...new Set(products.map(p => p.category))];
 
@@ -19,13 +19,19 @@ export default function Shop({products}) {
       <div className="bg-gradient-to-b from-black/30 to-white/80 pt-10">
         <HeroSm />
       </div>
-      <input value={phrase} onChange={e => setPhrase(e.target.value)} type="text" placeholder="Search for products..." className="bg-gray-200 w-full py-2 px-4 rounded-xl"/>
+      <input
+        value={phrase}
+        onChange={e => setPhrase(e.target.value)}
+        type="text"
+        placeholder="Search for products..."
+        className="bg-gray-200 w-full mx-4 py-2 px-4 rounded-xl"
+      />
       <div>
         {categoriesNames.map(categoryName => (
           <div key={categoryName}>
             {products.find(p => p.category === categoryName) && (
               <div>
-                <h2 className="text-2xl py-5 capitalize">{categoryName}</h2>
+                <h2 className="text-2xl p-5 capitalize">{categoryName}</h2>
                 <div className="flex -mx-5 overflow-x-scroll snap-x scrollbar-hide">
                   {products
                     .filter(p => p.category === categoryName)

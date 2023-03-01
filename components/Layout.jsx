@@ -14,7 +14,7 @@ export default function Layout({ children }) {
   //   }, [setSelectedProducts]);
   return (
     <>
-      <div>
+      <div className="pt-0">
         <div className="pt-0">
           <Navbar />
           {children}
